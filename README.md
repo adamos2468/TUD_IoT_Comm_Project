@@ -68,10 +68,18 @@ Open a serial terminal on an RX node:
 make term
 ```
 
+If you have multiple boards connected, find the right port first and pass it explicitly:
+
+```bash
+ls /dev/ttyACM*   # or /dev/ttyUSB*
+make term PORT=/dev/ttyACM1
+```
+
 Save output to a file (live view + file simultaneously):
 
 ```bash
 make term | tee data_bridge_nodeA.csv
+make term PORT=/dev/ttyACM1 | tee data_bridge_nodeA.csv
 ```
 
 The output format is CSV:
