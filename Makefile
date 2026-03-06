@@ -25,6 +25,7 @@ USEMODULE += ztimer_msec
 # Build as TX node with: make TX_NODE=1
 TX_NODE ?= 0
 CFLAGS += -DTX_NODE=$(TX_NODE)
+CFLAGS += -DEVENT_THREAD_STACKSIZE_DEFAULT=2048
 
 init:
 	git submodule update --init --recursive
